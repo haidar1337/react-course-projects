@@ -10,6 +10,9 @@ export function calculateInvestmentResults({
   expectedReturn,
   duration,
 }, results) {
+  if (duration <= 0) {
+    return [];
+  }
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {
